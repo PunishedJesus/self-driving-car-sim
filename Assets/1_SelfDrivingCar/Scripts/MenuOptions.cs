@@ -38,7 +38,7 @@ public class MenuOptions : MonoBehaviour
         }
 
     }
-
+    
     public void StartAutonomousMode()
     {
         if (track == 0) {
@@ -47,6 +47,7 @@ public class MenuOptions : MonoBehaviour
             SceneManager.LoadScene("JungleTrackAutonomous");
         }
     }
+    
 
     public void SetLakeTrack()
     {

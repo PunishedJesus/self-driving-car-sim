@@ -6,21 +6,25 @@ using UnityStandardAssets.Vehicles.Car;
 using System;
 using System.Security.AccessControl;
 
+
 public class CommandServer : MonoBehaviour
 {
 	public CarRemoteControl CarRemoteControl;
 	public Camera FrontFacingCamera;
 	private SocketIOComponent _socket;
 	private CarController _carController;
+	
 
 	// Use this for initialization
 	void Start()
 	{
+	
 		_socket = GameObject.Find("SocketIO").GetComponent<SocketIOComponent>();
 		_socket.On("open", OnOpen);
 		_socket.On("steer", OnSteer);
 		_socket.On("manual", onManual);
 		_carController = CarRemoteControl.GetComponent<CarController>();
+		
 	}
 
 	// Update is called once per frame
